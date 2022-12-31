@@ -1,0 +1,3 @@
+/vecomm
+.db.sqlite3
+.env
