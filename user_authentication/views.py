@@ -1,4 +1,5 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -8,6 +9,9 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password2 = request.POST['password2']
+
+        if password != password2:
+            return HttpResponse('Password not matching...')
     else:
         print('get World')
 
