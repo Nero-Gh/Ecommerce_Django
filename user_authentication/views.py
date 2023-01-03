@@ -4,6 +4,13 @@ from django.shortcuts import render,redirect
 
 
 def register(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+    else:
+        print('get World')
+
     return render(request, 'authentication/register.html')
 
 def login(request):
